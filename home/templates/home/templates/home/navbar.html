@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<!--header -->
+<div id="header-wrap">
+    <div id="header"><a name="top"></a>
+        <h1 id="logo-text"><a href="#">TSM Monitoring Services</a></h1>
+        <div id="nav">
+            <ul>
+                <li id="current"><a href="index.php">Version Query</a></li>
+                <li id="current"><a href="http://94.103.41.146:9091/versions/excel/">Export Versions to Excel</a></li>
+                <li id="current"><a href="genelindirme.php">Update Status</a></li>
+                <li id="current" class="active"><a href="gmpMesajlari.php">GMP Messages</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="content-wrap" class="clear">
+    <!-- content -->
+    <div id="content">
+        <!-- main -->
+        <div id="main">
+            <div class="post">
+                <div class="right">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" name="startDate" id="startDate"/>
+                    <label for="endDate">End Date:</label>
+                    <input type="date" name="endDate" id="endDate"/>
+                    <label for="qsearch">Serial NO:</label>
+                    <input id="txtSearch" type="text" name="txtSearch"/>
+                    <label for="msgType">Message Type:</label>
+                    <select class="js-basic-multiple" name="msgType" multiple="multiple" id="msgType">
+                      <option value="FF8802">Parametre (FF8802)</option>
+                      <option value="FF887D">Ek Parametre (FF887D)</option>
+                      <option value="FF887F">Müşteri Bilgisi (FF887F)</option>
+                      <option value="FF887B">UPD Bilgisi (FF887B)</option>
+                      <option value="FF8803">Z Raporu (FF8803)</option>
+                      <option value="FF8879">Günlük Rapor (FF8879)</option>
+                      <option value="FF8813">Aylık Rapor (FF8813)</option>
+                      <option value="FF8804">Fiş Bilgileri (FF8804)</option>
+                      <option value="FF8806">Olay Kayıtları (FF8806)</option>
+                      <option value="FF8807">İstatistik (FF8807)</option>
+                    </select>
+                    <input type="submit" name="submit" id="submit" value="OK">
+                    <label for="qsearch">Number of known devices: <?php echo $result_for_version ?></label>
+                    <div id="gmpMessages"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /main -->
+    </div>
+</div>
+</div>
+<!-- /content-out -->
+</div>
+</div>
+    {% block content %}
+    {% endblock %}
+</body>
