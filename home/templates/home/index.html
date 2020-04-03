@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+(% include 'home/templates/home/navbar' %}
+{% block content %}
+<div class="card" style="width: 10rem;">
+    <div class="card-header">
+        Çift sayılar
+    </div>
+    <ul class="list-group list-group-flush">
+        {% for evenNumber in evenNumberList%}
+            <li class="list-group-item">{{evenNumber}}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'home/templates/home/navbar.html' %}
+{% block content %}
+<div class="card" style="width: 10rem;">
+    <div class="card-header">
+        Nav Bar
+    </div>
+    <ul class="list-group list-group-flush">
+        {% for evenNumber in evenNumberList%}
+            <li class="list-group-item">{{evenNumber}}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
